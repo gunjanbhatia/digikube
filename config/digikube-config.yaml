@@ -25,7 +25,7 @@ cloud:
     labels: "type=${BASTION_TAG_IDENTIFIER},creator=cloud-init"
 gitConfig:
   digikube:
-    repository: "https://github.com/gunjanbhatia/digikube050220.git"
+    repository: "https://github.com/gunjanbhatia/digikube.git"
     user: "gunjan.1903@gmail.com"
 component:
   kubectl:
@@ -40,10 +40,10 @@ component:
     version: "1.15.0"
     localPath: "/usr/local/bin/kops"
     kopsp:
-      url: "https://raw.githubusercontent.com/samdesh-gcp1/digikube/master/bin/v15/kopsp.tar.gz"
+      url: "https://raw.githubusercontent.com/gunjanbhatia/digikube/master/bin/v15/kopsp.tar.gz"
       localPath: "/usr/local/bin/kopsp"
     kopsn:
-      url: "https://raw.githubusercontent.com/samdesh-gcp1/digikube/master/bin/v15/kopsn.tar.gz"
+      url: "https://raw.githubusercontent.com/gunjanbhatia/digikube/master/bin/v15/kopsn.tar.gz"
       localPath: "/usr/local/bin/kopsn"
   helm:
     version: "v3.0.2"
