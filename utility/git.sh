@@ -18,8 +18,8 @@ function push {
 }
 
 function identity {
-   git config --global user.email "samdesh.gcp1@gmail.com"
-   git config --global user.name "samdesh_gcp1"
+   git config --global user.email "gunjan.1903@gmail.com"
+   git config --global user.name "gunjanbhatia"
 }
 
 __operation="${1}"
