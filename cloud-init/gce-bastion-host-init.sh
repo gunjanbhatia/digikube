@@ -17,7 +17,7 @@ touch $INIT_LOG
 date >> $INIT_LOG
 
 GIT_REPO_URL="https://github.com/gunjanbhatia/digikube050220.git"
-DIGI_DIR=${BASE_DIR}digikube/
+DIGI_DIR=${BASE_DIR}digikube050220/
 MAIN_INSTALLER=${DIGI_DIR}installer/main-installer
 
 if [[ -d ${DIGI_DIR} ]]; then
