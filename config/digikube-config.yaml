@@ -2,7 +2,7 @@ cloud:
   provider: "gce"
   adminUser: "gunjanbhatia_gcp"
   project:
-    name: "digikube003"
+    name: "ml-pipeline-k8s-1-15"
       overrideAllowed: "no"  
     region: "us-central1"
     zone: "us-central1-c"
@@ -25,8 +25,8 @@ cloud:
     labels: "type=${BASTION_TAG_IDENTIFIER},creator=cloud-init"
 gitConfig:
   digikube:
-    repository: "https://github.com/samdesh-gcp1/digikube.git"
-    user: "samdesh.gcp1@gmail.com"
+    repository: "https://github.com/gunjanbhatia/digikube050220.git"
+    user: "gunjan.1903@gmail.com"
 component:
   kubectl:
     version: "1.15"
