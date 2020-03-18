@@ -2,7 +2,7 @@ cloud:
   provider: "gce"
   adminUser: "gunjan_bhatia_k8s"
   project:
-    name: "digik8s15"
+    name: "mlk8s15"
       overrideAllowed: "no"  
     region: "us-central1"
     zone: "us-central1-c"
