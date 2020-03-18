@@ -1,6 +1,6 @@
 cloud:
   provider: "gce"
-  adminUser: "gunjan_bhatia_k8s"
+  adminUser: "gunjanbhatia.gcp"
   project:
     name: "mlk8s15"
       overrideAllowed: "no"  
