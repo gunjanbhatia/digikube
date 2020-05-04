@@ -121,7 +121,7 @@ cluster:
         chartValues: "kubernetes-dashboard-config-values.yaml"
         namespace: "kube-system"
   platformApps:
-      kubeflow:
+    kubeflow:
       enabled: "true"
       omCommands:
         create: "true"
@@ -129,12 +129,9 @@ cluster:
         delete: "true"
         validate: "true"
       deploymentEngine: "cmd"
-        chartRepoUrl: "https://charts.polyaxon.com"
-        chartRepo: "polyaxon"
-        chartName: "polyaxon/polyaxon"
-        releaseName: "polyaxon"
-        chartValues: "polyaxon-config-values.yaml"
-        namespace: "polyaxon"
+        configFileName: "kubeflow-config-values.yaml"
+        scriptName: "kubeflow-installer.sh"
+        namespace: "kubeflow"
     polyaxon:
       enabled: "true"
       omCommands:
