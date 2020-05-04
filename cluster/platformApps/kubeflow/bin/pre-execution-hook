@@ -1,3 +1,68 @@
+#! /bin/bash
 
+base_dir=~/
+digi_dir=${base_dir}digikube/
 
+. ${digi_dir}utility/general.sh
+. ${digi_dir}utility/log.sh
+. ${digi_dir}common/digikube-config.sh
 
+digikube_config=${digi_dir}/config/digikube-config.yaml
+parse_yaml ${digikube_config} "_config_"
+
+app_type="${1}"
+app_name="${2}"
+app_command="${3}"
+app_command_param="${4}"
+
+alias python=python3
+
+#chartName=$(get-config-value "cluster.${app_type}.${app_name}.deploymentEngine.chartName")
+
+kf_base_dir=${base_dir}kubeflow/
+kf_name="kubeflow-demo"
+kf_dir=${kf_base_dir}${kf_name}
+
+function init-kubeflow {
+
+	##echo "setting up prerequisites"
+
+	kfctl version
+  
+	if [[ $? -ne 0 ]]; then
+    wget https://github.com/kubeflow/kfctl/releases/download/v1.0.2/kfctl_v1.0.2-0-ga476281_linux.tar.gz
+		tar -xvf kfctl_v1.0.2-0-ga476281_linux.tar.gz
+		export PATH=$PATH:${kf_base_dir}
+    echo $PATH
+    kfctl version
+	fi
+
+	export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.0-branch/kfdef/kfctl_k8s_istio.v1.0.2.yaml"
+
+  ## installing kustomize
+  export opsys=linux
+  curl -s https://api.github.com/repos/kubernetes-sigs/kustomize/releases | grep browser_download | grep download/kustomize | grep -m 1 $opsys | cut -d '"' -f 4 | xargs curl -O -L
+  tar xzf ./kustomize_v*_${opsys}_amd64.tar.gz
+  
+  mkdir -p ${kf_base_dir}/bin
+  mv kustomize ${kf_base_dir}/bin/kustomize
+  chmod u+x ${kf_base_dir}/bin/kustomize
+  export PATH=$PATH:${kf_base_dir}/bin
+  kustomize
+	
+}
+
+function create-kubeflow {
+	
+	init-kubeflow
+  mkdir -p ${kf_dir}
+  
+  wget ${CONFIG_URI}
+  
+  sleep 60
+  
+  kfctl apply -V -f kfctl_k8s_istio.v1.0.2.yaml
+  
+  cd ${kf_dir}
+  
+}
