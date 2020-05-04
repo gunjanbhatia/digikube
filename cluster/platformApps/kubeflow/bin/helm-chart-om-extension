@@ -1,2 +1,14 @@
+#! /bin/bash
 
+function validate {
+
+  if [[ -z ${1} ]]; then
+    echo "validate command available"
+  else
+    echo "inside ${1} ${2} ${3} ${4}"
+    echo "Command not yet implemented."
+    exit 1
+  fi
+
+}
 
