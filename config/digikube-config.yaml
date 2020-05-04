@@ -77,6 +77,21 @@ cluster:
     associatePublicIp: "false"  
     preemptible: "true"
   sysApps:
+    kustomize:
+      enabled: "true"
+      omCommands:
+        create: "true"
+        update: "false"
+        delete: "true"
+        validate: "true"
+        getRelease: "true"
+      deploymentEngine: "cmd"
+        chartRepoUrl: "https://kubernetes-charts.storage.googleapis.com/"
+        chartRepo: "stable/nginx-ingress"
+        chartName: "stable/nginx-ingress"
+        releaseName: "ingress-controller"
+        chartValues: "ingress-controller-config-values.yaml"
+        namespace: "sys-apps"  
     ingressController:
       enabled: "true"
       omCommands:
@@ -106,6 +121,20 @@ cluster:
         chartValues: "kubernetes-dashboard-config-values.yaml"
         namespace: "kube-system"
   platformApps:
+      kubeflow:
+      enabled: "true"
+      omCommands:
+        create: "true"
+        update: "true"
+        delete: "true"
+        validate: "true"
+      deploymentEngine: "cmd"
+        chartRepoUrl: "https://charts.polyaxon.com"
+        chartRepo: "polyaxon"
+        chartName: "polyaxon/polyaxon"
+        releaseName: "polyaxon"
+        chartValues: "polyaxon-config-values.yaml"
+        namespace: "polyaxon"
     polyaxon:
       enabled: "true"
       omCommands:
