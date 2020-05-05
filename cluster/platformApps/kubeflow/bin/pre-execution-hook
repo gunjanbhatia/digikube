@@ -26,8 +26,10 @@ kf_dir=${kf_base_dir}${kf_name}
 function init-kubeflow {
 
 	##echo "setting up prerequisites"
-
+        
+        cd ${kf_base_dir}
 	kfctl version
+
   
 	if [[ $? -ne 0 ]]; then
     wget https://github.com/kubeflow/kfctl/releases/download/v1.0.2/kfctl_v1.0.2-0-ga476281_linux.tar.gz
