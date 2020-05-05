@@ -15,7 +15,7 @@ app_name="${2}"
 app_command="${3}"
 app_command_param="${4}"
 
-alias python=python3
+
 
 #chartName=$(get-config-value "cluster.${app_type}.${app_name}.deploymentEngine.chartName")
 
