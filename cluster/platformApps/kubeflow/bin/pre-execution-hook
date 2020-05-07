@@ -19,7 +19,7 @@ app_command_param="${4}"
 
 dirName=$(get-config-value "cluster.${app_type}.${app_name}.deploymentEngine.dirName")
 kf_name=$(get-config-value "cluster.${app_type}.${app_name}.deploymentEngine.deploymentName")
-CONFIG_URI=$(get-config-value "cluster.${app_type}.${app_name}.deploymentEngine.configName")
+CONFIG_URI=$(get-config-value "cluster.${app_type}.${app_name}.deploymentEngine.configFile")
 opsys=$(get-config-value "cluster.${app_type}.${app_name}.deploymentEngine.opsys")
 
 kf_base_dir=${base_dir}${dirName}/
