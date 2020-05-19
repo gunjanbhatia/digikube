@@ -68,8 +68,8 @@ cluster:
       volumeSize: 10
       image: "cos-cloud/cos-stable-65-10323-99-0"
     node:
-      countMin: 2
-      countMax: 2
+      countMin: 4
+      countMax: 4
       zone: "us-central1-c"
       size: "g1-small"
       volumeSize: 30
