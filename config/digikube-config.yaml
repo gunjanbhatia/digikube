@@ -2,7 +2,7 @@ cloud:
   provider: "gce"
   adminUser: "gunjanbhatia_gcp"
   project:
-    name: "mlpipelineonk8s"
+    name: "k8s15ckad"
       overrideAllowed: "no"  
     region: "us-central1"
     zone: "us-central1-c"
